@@ -11,10 +11,10 @@ export const reducer = (state, action) => {
             return { ...state, smurfs: action.payload }
         case "SEND_TO_GULAG":
             console.log(`Item Clicked with id ${action.payload}`)
-            if (state.smurfs.find(el => action.payload === el)) { console.log('Smurf processed') }
+            if (state.smurfs.find(el => action.payload === el.id)) { console.log('Smurf processed') }
             else { console.log('Smurf Bribed Guard!') }
             return {
-                ...state, smurfs: state.smurfs.filter(element => element !== action.payload)
+                ...state, smurfs: state.smurfs.filter(element => element.id !== action.payload)
             }
         default:
             return state;
