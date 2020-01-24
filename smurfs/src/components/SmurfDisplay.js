@@ -1,9 +1,10 @@
 import React, { useReducer, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
-import Container from '@material-ui/core/Container';
 import AppContext from '../contexts/AppContext';
 import { reducer } from '../reducers/reducer';
 import Card from '@material-ui/core/Card'
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 
 const SmurfDisplay = () => {
     const { appState, dispatch } = useContext(AppContext);
@@ -30,6 +31,7 @@ const SmurfDisplay = () => {
                     <p>Age: {el.age}</p>
                     <p>Height: {el.height}</p>
                     <p>Tattoo Behind Ear: {el.id}</p>
+                    <Button variant='contained' color='secondary' onClick={() => dispatch({ type: 'SEND_TO_GULAG', payload: el.id })}>Send To Gulag!</Button>
                 </Card>
             ))}
 

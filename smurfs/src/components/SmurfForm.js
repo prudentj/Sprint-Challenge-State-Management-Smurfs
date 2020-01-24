@@ -29,7 +29,8 @@ const SmurfForm = (props) => {
         console.log('Submitted Items', {
             name: name,
             age: age,
-            height: `${height} cm`
+            height: `${height} cm`,
+            id: Date.now()
         });
         const base_url = 'http://localhost:3333/smurfs';
         axios
